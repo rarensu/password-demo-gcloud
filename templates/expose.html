@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block page_css %}
+<style>
+#expose-nav {
+    text-decoration: underline;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1>{% block title %} Expose a User {% endblock %}</h1>
+    <form method="post">
+        <label for="usernamefield">Username</label>
+        <input type="text" name="usernamefield"
+               placeholder="username"  maxlength="126"
+               value="{{ request.form['usernamefield'] }}"></input>
+        <br>
+        <label for="villainy">I solemnly swear that I am up to no good</label>
+        <input type="checkbox" name="villainy"></input> 
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if hashtext %}
+    <p>
+    Somehow, you obtained access to the server's password hash file for user "{{ request.form['usernamefield'] }}".
+    </p>
+        <div class='message'>
+        <p>{{ hashtext }}</p>
+    </div>
+    {% endif %}
+{% endblock %}

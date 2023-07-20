@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block page_css %} {% endblock %} 
+</head>
+<body>
+    <nav>
+        <a id="index-nav" href="{{ url_for('root') }}">Home</a>
+        <a id="users-nav" href="{{ url_for('users') }}">Users</a>
+        <a id="create-nav" href="{{ url_for('create') }}">Create</a>
+        <a id="test-nav" href="{{ url_for('test') }}">Test</a>
+        <a id="delete-nav" href="{{ url_for('delete') }}">Delete</a>
+        <a id="expose-nav" href="{{ url_for('expose') }}">Expose</a>
+        <a id="about-nav" href="#">About</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

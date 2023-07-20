@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page_css %} 
+<style>
+#create-nav {
+    text-decoration: underline;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1>{% block title %} Create a New User {% endblock %}</h1>
+    <form method="post">
+        <label for="usernamefield">Username</label>
+        <input type="text" name="usernamefield"
+               placeholder="username" maxlength="126"
+               value="{{ request.form['usernamefield'] }}"></input>
+        <br>
+        <label for="passwordfield">Password</label>
+        <input type="text" name="passwordfield"
+                placeholder="password" maxlength="63"
+                value="{{ request.form['passwordfield'] }}"></input>        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

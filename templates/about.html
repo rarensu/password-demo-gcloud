@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block page_css %}
+<style>
+#about-nav {
+    text-decoration: underline;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>About the Password Demo</h1>
+<h2>Who made this?</h2>
+<p>Richard Lawrence
+    <br>Texas A&M University
+    <br><a href="mailto:rlawrence@tamu.edu">rlawrence@tamu.edu</a></p>
+<h2>Why passphrases?</h2>
+<p>I'll let my favorite web comic explain that. 
+<br><a href="https://xkcd.com/936/">https://xkcd.com/936/</a></p>
+<h2>How does it work?</h2>
+<p>In addition to storing one password hash on the server, I store the password hash for each deletion typo of the password. 
+<br>When checking a password guess, I also check each deletion typo of the guess. <br>For most simple typos, such as substitution or tranposition, there will be a match. </p>
+<h2>Is it safe?</h2>
+<p>In theory, typo tolerant passwords are safe. Here's a paper about it.<br><a href="https://dl.acm.org/doi/10.1145/3133956.3134000">https://dl.acm.org/doi/10.1145/3133956.3134000</a></p>
+<h2>Can I see the code?</h2>
+<p><br>Python code for typo tolerance, in google Colab. 
+    <br> <a href="https://colab.research.google.com/drive/1R4yoZl7d8W12O_EZZEFP0tNh2dfPe8OH?usp=sharing">https://colab.research.google.com/drive/1R4yoZl7d8W12O_EZZEFP0tNh2dfPe8OH?usp=sharing</a>
+    <br>Code for the cloud app. 
+    <br> <a href="https://github.com/rarensu/password-demo-gcloud">https://github.com/rarensu/password-demo-gcloud</a>
+</p>
+{% endblock %}

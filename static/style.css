@@ -19,6 +19,11 @@ body {
   text-align: center;
 }
 
+.centerlist {
+    text-align: center;
+    list-style-position: inside;
+}
+
 .message {
     padding: 10px;
     margin: 5px;

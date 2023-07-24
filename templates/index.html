@@ -10,4 +10,23 @@
 
 {% block content %}
 <h1>Welcome to Password Demo</h1>
+<p>This cloud app demonstrates typo-tolerant password authentication.</p>
+<h2>Instructions</h2>
+<ol class="centerlist">
+<li>
+    <a id="create-nav" href="{{ url_for('create') }}">Create</a> a new user. Choose a passphrase that's long but easy to remember. 
+</li>
+<li>
+    <a id="test-nav" href="{{ url_for('test') }}">Test</a> your user. Try entering variations of the password that include a small typo. 
+</li>
+<li>
+    <a id="expose-nav" href="{{ url_for('expose') }}">Expose</a> your user's secrets, if you're curious about what's going-on behind the scenes. 
+</li>
+<li>
+    <a id="delete-nav" href="{{ url_for('delete') }}">Delete</a> your user when you're done. 
+</li>
+<li>
+    Read more <a id="about-nav" href="{{ url_for('about') }}">About</a> this app. 
+</li>
+</ol>
 {% endblock %}
